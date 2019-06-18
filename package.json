@@ -1,0 +1,9 @@
+{
+  "name": "dronetrafficsimulation",
+  "version": "1.0.0",
+  "main": "drone_d.py",
+  "repository": "git@github.com:SVJayanthi/DroneTrafficSimulation.git",
+  "author": "Sravan Jayanthi <sravanvjayanthi@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
