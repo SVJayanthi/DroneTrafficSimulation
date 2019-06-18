@@ -2,7 +2,7 @@
 
 This is a simulation and rendering of the Mandelbrot Set,  named after mathematician Benoit Mandelbrot, that provides a visual for the set of complex numbers that remain bounded in absolute value from the function.
 
-![mandelbrot.png](https://github.com/SVJayanthi/MandelbrotSet/blob/master/output/mandelbrot_1.png)
+![mandelbrot.png](https://github.com/SVJayanthi/DroneTrafficSimulation/blob/master/Environment.png)
 
 The function is
 
