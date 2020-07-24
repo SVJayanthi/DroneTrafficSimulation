@@ -46,27 +46,27 @@ The programs were designed to simulate and render efficiently and each implement
 Other factors that were studied are the environmental factors such as wind, inclement weather (snow/rain), and obstacles such as trees, hills, and buildings. These would require the drone to adjust their travel paths so that their pitch is stronger towards the wind or they accelerate upwards to avoid colliding into hills or buildings.
 ### Obstacle Avoidance Protocol
 ```python
-        r = self.state[d, 3:5] - self.state[d, :2]
-        ro = self.state[d, :2] - self.obs_state[o-self.drones, :2]
-        m = np.linalg.norm(r)
-        v_m = np.linalg.norm(self.state[d, 6:8])
-        if (self.obs_state[o-self.drones, 2] < (self.max_height - self.size * 2) and self.state[d, 2] < self.obs_state[o-self.drones, 2]):
-            self.state[d, 8] += self.acc_vert * dt
-            self.state[d, 2] = self.state[d, 8] * dt
+    r = self.state[d, 3:5] - self.state[d, :2]
+    ro = self.state[d, :2] - self.obs_state[o-self.drones, :2]
+    m = np.linalg.norm(r)
+    v_m = np.linalg.norm(self.state[d, 6:8])
+    if (self.obs_state[o-self.drones, 2] < (self.max_height - self.size * 2) and self.state[d, 2] < self.obs_state[o-self.drones, 2]):
+        self.state[d, 8] += self.acc_vert * dt
+        self.state[d, 2] = self.state[d, 8] * dt
 ```
 Drone congestion would be another interesting factor to study to see how rapidly flying objects would perform if the airspace is busy with others doing the same. This simulations was designed with assumption that communications technologies would be able to fit within a drone so that each drone in the air space can communicate with eachother. Thus, each drone is aware of the locations of every other drone and can adjust their flight path in order to avoid colliding with any of them.
 ### Flight Path Adjustment Routine
 ```python
-        r = self.state[i1, 3:5] - self.state[i1, :2]
-        ro = self.state[i1, :2] - self.state[i2, :2]
-        m = np.linalg.norm(r)
-        if (m < (self.size * 20)):
-            u = r / m
-            diff = ro - (2 * np.dot(ro, u) * u)
-            diff_m = np.linalg.norm(diff)
-            diff_u = diff / diff_m
-            rem = diff_u - u
-            rem /= np.linalg.norm(rem)
+    r = self.state[i1, 3:5] - self.state[i1, :2]
+    ro = self.state[i1, :2] - self.state[i2, :2]
+    m = np.linalg.norm(r)
+    if (m < (self.size * 20)):
+        u = r / m
+        diff = ro - (2 * np.dot(ro, u) * u)
+        diff_m = np.linalg.norm(diff)
+        diff_u = diff / diff_m
+        rem = diff_u - u
+        rem /= np.linalg.norm(rem)
 ```
 
 ## Conclusions
