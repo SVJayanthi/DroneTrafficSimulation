@@ -73,4 +73,4 @@ Drone congestion would be another interesting factor to study to see how rapidly
 This study of the importance of congestion, mechanical, and environmental factors on the capacity for drones to reach their target destination in the minimal amount of time has determined that, environmental factors including wind or obstacles have the most bearing followed by mechanical factors including battery life and payload weight, and then congestion. The output is located in the `data/` folder where travel times are documented for a given distance showing that a change in environmental factors influence the time taken the most for the many drones traveling in that region.
 
 ## License
-(MIT)[LICENCE]
+MIT
